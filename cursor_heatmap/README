@@ -1,0 +1,23 @@
+This collection of scripts are designed to log the cursor position and create a
+heatmap image of the data.
+
+= Instructions for use =
+
+Generate the log file by recording the cursor location using,
+
+	./run_collection.sh
+
+You may want to edit this script to set the poll time for samples, and also
+choose how you want the data seperated. You can put it all in one file, or one
+file per day, per hour, per minute... Currently you get one logfile per hour.
+
+When you have some logfiles, generate the heatmap image using,
+
+	./makeheatmap.sh logs/file.log
+
+This will make 2 images one with all the data samples, the other with
+consecutive data samples that are the same are removed (u, short for uniq,
+appended to filename) (this roughly means dots are not drawn on the heat map
+when the mouse is still).
+
+You may also need to tweek the alpha values in makeheatmap.sh.
